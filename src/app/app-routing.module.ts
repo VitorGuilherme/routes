@@ -1,9 +1,14 @@
+import { SobreComponent } from './pages/sobre/sobre.component';
+import { PageErrorComponent } from './pages/page-error/page-error.component';
+import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  // { path: "", component: PageHomeComponent, pathMatch: 'full'},
-  // { path: "sobre", component: PageSobreComponent}
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'sobre/:id/:username', component: SobreComponent },
+  { path: '404', component: PageErrorComponent },
+  { path: '**', redirectTo: '404' }
 ];
 
 @NgModule({
